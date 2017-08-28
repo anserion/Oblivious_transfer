@@ -1,0 +1,22 @@
+Oblivious transfer client
+n,e - RSA keys (numbers)
+m0,m1 - text messages (binary codes)
+n=77
+e=7
+message from server block size=7
+output message block size=6
+
+waiting from server: x0=00011
+x0=3
+
+waiting from server: x1=10100
+x1=20
+
+select message on server (s0 - 0, s1 - 1): b=1
+secret number: k=47=101111
+v=18= 10010
+waiting from server: m0=0001100
+waiting from server: m1=0100001
+block  1: s=0100001=  33 ==> 111111=  63
+===========================
+message: 111111

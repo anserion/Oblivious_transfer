@@ -1,0 +1,38 @@
+Oblivious transfer server
+n,d,e - RSA keys (numbers)
+s0,s1 - text messages (binary codes)
+n=77
+d=43
+e=7
+input block size=6
+output block size=7
+
+(for default s0="0" input ".") s0=011001
+add 0 zero bits to S0
+S0=011001 
+
+(for default s1="1" input ".") s1=111111
+add 0 zero bits to S1
+S1=111111 
+===========================
+public key: N=77
+public key: E=7
+
+random: x0=   3 = 00011
+random: x1=  20 = 10100
+
+waiting from client: V=10010
+v_dec=18
+
+m0_dec=(v_dec-x0_dec)^d mod N=64
+m1_dec=(v_dec-x1_dec)^d mod N=47
+
+coding of message S0
+block  1: s=011001=  25 ==> 0001100=  12
+===========================
+oblivious transfer message S0: m0= 0001100 
+
+coding of message S1
+block  1: s=111111=  63 ==> 0100001=  33
+===========================
+oblivious transfer message S1: m1= 0100001 
